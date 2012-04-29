@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:a="urn:import:org.springsource.roo.extrack.client.managed.ui" xmlns:d="urn:import:com.google.gwt.user.datepicker.client" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:r="urn:import:org.springsource.roo.extrack.client.scaffold.ui">
+  <ui:style>
+    .outer {
+      padding: 10px;
+    }
+    .error {
+      padding-left: 0.5em;
+      background-color: red;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .value {
+      padding-bottom: 10px;
+    }
+  </ui:style>
+ 
+  <g:HTMLPanel debugId="boundElementHolder" styleName="{style.outer}">
+    <div class="{style.error}" ui:field="errors"/>
+    
+    <div id="displayName">
+            <div class="{style.label}">Display Name</div>
+            <div class="{style.value}">
+                <g:TextBox ui:field="displayName"/>
+            </div>
+        </div>
+    <div id="userName">
+            <div class="{style.label}">User Name</div>
+            <div class="{style.value}">
+                <g:TextBox ui:field="userName"/>
+            </div>
+        </div>
+    <div id="department">
+            <div class="{style.label}">Department</div>
+            <div class="{style.value}">
+                <g:TextBox ui:field="department"/>
+            </div>
+        </div>
+    <div id="supervisor">
+            <div class="{style.label}">Supervisor</div>
+            <div class="{style.value}">
+                <g:ValueListBox ui:field="supervisor"/>
+            </div>
+        </div>
+    <div id="gender">
+            <div class="{style.label}">Gender</div>
+            <div class="{style.value}">
+                <g:ValueListBox ui:field="gender"/>
+            </div>
+        </div>
+    <div id="admin">
+            <div class="{style.label}">Admin</div>
+            <div class="{style.value}">
+                <g:CheckBox ui:field="admin"/>
+            </div>
+        </div>
+
+    <g:Button ui:field="save">Save</g:Button>
+  </g:HTMLPanel>
+</ui:UiBinder>

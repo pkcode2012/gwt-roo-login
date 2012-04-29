@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+ <ui:style>
+    .outer {
+      padding: 10px;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .value {
+      padding: 4px 0px 15px 15px;
+    }
+  </ui:style>
+
+  <g:HTMLPanel debugId="boundElementHolder" styleName="{style.outer}">
+    <div id="id">
+            <div class="{style.label}">Id</div>
+            <div class="{style.value}" ui:field="id"/>
+        </div>
+    <div id="purpose">
+            <div class="{style.label}">Purpose</div>
+            <div class="{style.value}" ui:field="purpose"/>
+        </div>
+    <div id="notes">
+            <div class="{style.label}">Notes</div>
+            <div class="{style.value}" ui:field="notes"/>
+        </div>
+    <div id="created">
+            <div class="{style.label}">Created</div>
+            <div class="{style.value}" ui:field="created"/>
+        </div>
+    <div id="department">
+            <div class="{style.label}">Department</div>
+            <div class="{style.value}" ui:field="department"/>
+        </div>
+    <div id="reporter">
+            <div class="{style.label}">Reporter</div>
+            <div class="{style.value}" ui:field="reporter"/>
+        </div>
+    <div id="approvedSupervisor">
+            <div class="{style.label}">Approved Supervisor</div>
+            <div class="{style.value}" ui:field="approvedSupervisor"/>
+        </div>
+    <div id="version">
+            <div class="{style.label}">Version</div>
+            <div class="{style.value}" ui:field="version"/>
+        </div>
+
+    <g:Button ui:field="delete">Delete</g:Button>
+  </g:HTMLPanel>
+</ui:UiBinder>
