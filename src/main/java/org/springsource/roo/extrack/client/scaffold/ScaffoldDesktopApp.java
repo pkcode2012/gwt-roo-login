@@ -59,12 +59,31 @@ public class ScaffoldDesktopApp extends ScaffoldApp {
 		/* And show the user the shell */
 		RootLayoutPanel.get().add(shell);
 	}
+	/**
+	 * Show login dialog
+	 */ 
+	private native void openLogin()/*-{
+	    $wnd.showLogin(); // defined in main html files
+	}-*/;
+
 
 	private void init() {
 		GWT.setUncaughtExceptionHandler(new GWT.UncaughtExceptionHandler() {
 			public void onUncaughtException(Throwable e) {
-				Window.alert("Error: " + e.getMessage());
-				LOGGER.log(Level.SEVERE, e.getMessage(), e);
+                            if (e instanceof UmbrellaException) {
+                                for (final Throwable e2: ((UmbrellaException) e).getCauses()) {
+
+                                    if (e2.getMessage().startsWith("Server Error 403")) {
+                                        // show login dialog
+                                        openLogin();
+                                        return;
+                                    } 
+                                }
+
+                                return;
+                            }
+			    Window.alert("Error: " + e.getMessage());
+                            LOGGER.log(Level.SEVERE, e.getMessage(), e);
 			}
 		});
 

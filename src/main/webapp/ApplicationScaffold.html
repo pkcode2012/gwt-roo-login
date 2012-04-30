@@ -1,15 +1,73 @@
 <!doctype html>
 <html>
-<head>
+  <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Data Browser</title>
     <script type="text/javascript" language="javascript" src="applicationScaffold/applicationScaffold.nocache.js"></script>
-</head>
-<body style="-webkit-text-size-adjust: none;">
-<iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
-  <span id='loading' style="margin-left:10px;font-size:12px;padding:10px;font-family:Helvetica;background-color:#e5edf9;border:2px solid #96a2b5;">
-    loading…
-  </span>
-</body>
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" ></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-darkness/jquery-ui.css" rel="Stylesheet" />
+
+    <script type="text/javascript">
+      $(function($){
+          var loginDiv = $("#login-template").get(0).cloneNode(true);
+          window.showLogin = function(){
+              $(loginDiv).dialog({
+                autoOpen : true,
+                modal : true,
+                hide: 'fold',
+                show: 'blind',
+                buttons : {
+                    "Login" : function(evt) {
+                        evt.preventDefault();
+                        $("#loginForm", loginDiv).submit();
+                    }
+                }
+              });
+           }
+      });
+    </script>
+  </head>
+
+  <body style="-webkit-text-size-adjust: none;">
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0">
+    </iframe>
+
+    <span id='loading' style="margin-left:10px;font-size:12px;padding:10px;font-family:Helvetica;background-color:#e5edf9;border:2px solid #96a2b5;">
+      loading…
+    </span>
+
+
+    <!-- Template for login dialog, to be shown using jquery. see showLogin() 
+      javascript function above
+    -->
+    <div id="login-template" style="display:none" title="Login">
+      <form id="loginForm" name="f" action="resources/j_spring_security_check" method="POST">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <label for="j_username">User Name:</label>
+              </td>
+              <td>
+                <input type="text" id="j_username" name="j_username" >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="j_password">Password:</label>
+              </td>
+              <td>
+                <input type="password" id="j_password" name="j_password" >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
+
 </html>
+
