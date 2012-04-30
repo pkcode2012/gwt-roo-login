@@ -1,5 +1,6 @@
 package org.springsource.roo.extrack.client.scaffold;
 
+import com.google.web.bindery.event.shared.UmbrellaException;
 import org.springsource.roo.extrack.client.managed.activity.*;
 import org.springsource.roo.extrack.client.managed.request.ApplicationRequestFactory;
 import org.springsource.roo.extrack.client.scaffold.gae.GaeHelper;
