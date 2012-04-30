@@ -1,0 +1,31 @@
+h1. Purpose 
+
+The purpose of this project is to make available to the public a
+SPRING-ROO/GWT based sample application with user authentication
+enabled (since I couldn't find a single decent example for doing
+this). It does not do a whole lot; it merely sets up a few additional
+items on top of ROO's generated code to enable security and add a
+login dialog.
+
+Note #1: this project adds a small Jquery (I know that it's not
+consistent with dojo usage in the rest of spring, but this is what I
+am familiar with. I also know that it's not in the spirit of GWT to
+use JS code, but use it as a starting example and rip it apart as you
+please!)
+
+Note #2: there is no logout code yet, and there's no user
+administration GUI.
+
+h2. Contributors
+
+GWT/ROO security tips from: http://rapilabs.com/spring-security-with-gwt-spring-roo
+
+A POM file fix from: http://stackoverflow.com/questions/6352208/how-to-solve-plugin-execution-not-covered-by-lifecycle-configuration-for-sprin
+
+h2. Setup steps I followed to create this project:
+
+# Download roo and install (version 1.2.1)
+# Get expenses.roo from samples dir inside ROO distro and make minor changes (see the modified file in the root of this repo). mainly added "security setup" at the _right place_ (order is important)
+# Make some xml changes to setup security (see checkin history to see what they are)
+# Hack together some JS code to put a login dialog together.
+
